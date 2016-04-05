@@ -1,0 +1,29 @@
+<!-- 60秒倒计时工具 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <button id="button" onclick="time()">
+    <p id="min">请点击</p>
+  </button>
+  <script>
+  var button = document.getElementById('button');
+  var text = document.getElementById('min');
+  var num = 59;
+  function time(){
+    button.disabled = "disabled";
+    var int = setInterval(function(){
+      text.innerHTML =  num-- + "秒后再点击";
+      if(num == 0){
+        text.innerHTML = "请点击";
+        clearInterval(int);
+      }
+    },1000);
+
+  }
+  </script>
+</body>
+</html>
