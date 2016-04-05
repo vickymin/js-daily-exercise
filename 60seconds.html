@@ -13,11 +13,12 @@
   var button = document.getElementById('button');
   var text = document.getElementById('min');
   function time(){
-    var num = 59;
+    var num = 60;
     button.disabled = "disabled";
+    text.innerHTML =  num + "秒后再点击";
     var int = setInterval(function(){
-      text.innerHTML =  num-- + "秒后再点击";
-      if(num == -1){
+      text.innerHTML =  --num + "秒后再点击";
+      if(num == 0){
         text.innerHTML = "请点击";
         button.disabled = "";
         clearInterval(int);
