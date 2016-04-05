@@ -12,17 +12,17 @@
   <script>
   var button = document.getElementById('button');
   var text = document.getElementById('min');
-  var num = 59;
   function time(){
+    var num = 59;
     button.disabled = "disabled";
     var int = setInterval(function(){
       text.innerHTML =  num-- + "秒后再点击";
-      if(num == 0){
+      if(num == -1){
         text.innerHTML = "请点击";
+        button.disabled = "";
         clearInterval(int);
       }
     },1000);
-
   }
   </script>
 </body>
